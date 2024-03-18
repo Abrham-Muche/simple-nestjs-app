@@ -1,0 +1,44 @@
+version: "3.0"
+
+services:
+  api:
+    container_name: nestjs_api
+    build: .
+    env_file: ./.env
+    environment:
+      - MYSQL_PORT=${MYSQL_PORT}
+      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DB=${MYSQL_DB}
+
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+    networks:
+      - api
+    volumes:
+      - ./src/:/usr/src/app/src
+  mysql:
+    image: mysql
+    volumes:
+      - mysql_volume:/var/lib/mysql
+    restart: always
+    env_file: ./.env
+    environment:
+      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_PORT=${MYSQL_PORT}
+      - MYSQL_DB=${MYSQL_DB}
+
+    networks:
+      - api
+networks:
+  api:
+    driver: bridge
+
+volumes:
+  mysql_volume:
+    driver: local
