@@ -12,7 +12,7 @@ For API documentation I used swagger framework and you can find it in the follow
 
 
 ```bash
-  api/v1/doc'
+  api/v1/doc
 ```
 
 ## Running the app
