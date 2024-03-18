@@ -45,7 +45,7 @@ $ npm run test:cov
 
 ## Stay in touch
 
-- Author - [Abrham Muche]
+- Author - [Abrham Muche](abrham365muche@gmail.com)
 
 ## License
 
