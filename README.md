@@ -1,4 +1,4 @@
-# Project Title: Fans_CRM RESTful API for NestJS CRUD Operations on User Entity
+# Project Title: RESTful API for NestJS CRUD Operations on User Entity
 
 This project is a simple implementation of the NestJS framework. It provides basic Create, Read (CR) operations for the User Entity.
 
